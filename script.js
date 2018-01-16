@@ -6,7 +6,7 @@ class Stopwatch extends React.Component {
       seconds: 0,
       miliseconds: 0,
       running: false
-    }
+    };
   }
 
   reset() {
@@ -36,7 +36,7 @@ class Stopwatch extends React.Component {
   }
 
   calculate() {
-    let {miliseconds, seconds, minutes} = this.state;
+    let { miliseconds, seconds, minutes } = this.state;
     miliseconds += 1;
     if (miliseconds >= 100) {
       //Ze względu to, że milisekund w sekundzie jest tysiąc, a nasz interwał wykonuje się co 10ms, należało podzielić 1000 przez 10.
@@ -54,30 +54,29 @@ class Stopwatch extends React.Component {
     });
   }
 
-	stop() {
+  stop() {
     if (this.state.running) {
       this.setState({
         running: false
       });
-    	clearInterval(this.state.watch);
+      clearInterval(this.state.watch);
     } else {
       this.reset();
     }
   }
 
   render() {
-  	return (
+    return (
       <div className="container">
         <nav className="controls">
-          <a href="#" className="button" id="start" onClick={this.start.bind(this)}>Start</a>
-          <a href="#" className="button" id="stop" onClick={this.stop.bind(this)}>Stop</a>
+          <a href="#"className="button"id="start"onClick={this.start.bind(this)}>Start</a>
+          <a href="#"className="button"id="stop"onClick={this.stop.bind(this)}>Stop</a>
         </nav>
         <div className="stopwatch">{this.format()}</div>
-        <ul className="results"></ul>
+        <ul className="results" />
       </div>
     );
   }
-
 }
 
 function pad0(value) {
@@ -85,7 +84,7 @@ function pad0(value) {
   if (result.length < 2) {
     result = "0" + result;
   }
-  return result; 
+  return result;
 }
 
 ReactDOM.render(<Stopwatch />, document.getElementById("app"));
