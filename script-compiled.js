@@ -33,6 +33,7 @@ var Stopwatch = function (_React$Component) {
         seconds: 0,
         miliseconds: 0
       });
+      clearInterval(this.state.watch);
     }
   }, {
     key: "format",
@@ -90,9 +91,6 @@ var Stopwatch = function (_React$Component) {
         this.setState({
           running: false
         });
-        clearInterval(this.state.watch);
-      } else {
-        this.reset();
       }
     }
   }, {
@@ -113,14 +111,19 @@ var Stopwatch = function (_React$Component) {
             "a",
             { href: "#", className: "button", id: "stop", onClick: this.stop.bind(this) },
             "Stop"
+          ),
+          React.createElement(
+            "a",
+            { href: "#", className: "button", id: "reset", onClick: this.reset.bind(this) },
+            "Reset"
           )
         ),
+        React.createElement("ul", { className: "results" }),
         React.createElement(
           "div",
           { className: "stopwatch" },
           this.format()
-        ),
-        React.createElement("ul", { className: "results" })
+        )
       );
     }
   }]);

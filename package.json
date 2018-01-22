@@ -17,5 +17,13 @@
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aadamcz/Stopwatch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aadamcz/Stopwatch/issues"
+  },
+  "homepage": "https://github.com/aadamcz/Stopwatch#readme"
 }
